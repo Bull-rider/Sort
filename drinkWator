@@ -1,0 +1,28 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+using std::cout;
+using std::endl;
+void qishuiwenti(int total, int nowwator, int vacant, int cap)
+{
+	int totalwator;
+	if ((nowwator+vacant) >= 2 || (nowwator + cap) >= 3)
+	{
+		int Vacantwator = vacant / 2;
+		int Capwator =	cap / 3;
+		nowwator = Vacantwator + Capwator;
+		totalwator = total + nowwator;
+		vacant = vacant % 2 + nowwator;
+		cap = cap % 3 + nowwator;
+		cout << totalwator << endl;
+		qishuiwenti(totalwator, nowwator, vacant, cap);
+	}
+}
+int main()
+{
+	int total = 20, vacant = 20, cap = 20, nowwator = 0;
+	cout << total << endl;
+	qishuiwenti(total, nowwator, vacant, cap);
+	return 0;
+}
