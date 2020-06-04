@@ -7,7 +7,7 @@ using namespace std;
 void binary_insert(int *a,int len)
 {
 	int i,j,low,hight,mid,val;
-	for(i=1;i<len;i++i)//外层循环控制插入元素个数
+	for(i=1;i<len;i++)//外层循环控制插入元素个数
 	{
 		val=a[i];
 		low=0;
